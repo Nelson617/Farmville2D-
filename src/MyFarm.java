@@ -1,5 +1,6 @@
 public class MyFarm {
 
+    //declare
     public Plot[][] grid;
 
     public static void main(String[] args) {
@@ -8,9 +9,23 @@ public class MyFarm {
 
     public MyFarm() {
 
-        // declare a 2D grid of plots
-
         // construct a 2D grid of plots
+
+        grid = new Plot [5][4];
+
+        // fill a 2D grid of plots
+        for(int a = 0; a < grid.length; a++) {
+            for(int b = 0; b < grid[0].length; b++) {
+                System.out.println("planting at row" + a + ", column " + b);
+
+                grid[a][b] = new Plot();
+                grid[a][b].printPlotInfo();
+
+
+
+
+            }
+        }
 
 
         // methods to write together during class
@@ -26,11 +41,28 @@ public class MyFarm {
 
     public void totalPlants() {
         // how many plants are there in total across all plots?
+        int total = 0;
+        for(int a = 0; a < grid.length; a++) {
+            for (int b = 0; b < grid[0].length; b++) {
+                total = total + grid[a][b].numberOfPlants;
+
+            }
+        }
+        System.out.println("total plants " + total);
     }
 
     public void totalCarrots() {
         // how many total carrots are there across all plots?
+        int totalCarrots = 0;
+        for (int a = 0; a < grid.length; a++) {
+            for (int b = 0; b < grid[0].length; b++) {
+                if (grid[a][b].plantName.equals("carrot")) {
+                    totalCarrots += grid[a][b].numberOfPlants;
 
+                }
+            }
+        }
+        System.out.println("total carrots " + totalCarrots);
     }
 
     public void averageNumberOfPlants() {
