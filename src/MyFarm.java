@@ -31,6 +31,7 @@ public class MyFarm {
         // methods to write together during class
         totalPlants();
         totalCarrots();
+        averageNumberOfPlants();
 
         /***
          * for each additional method you code, call it here
@@ -67,11 +68,21 @@ public class MyFarm {
 
     public void averageNumberOfPlants() {
         // what is the average number of plants across the whole row?
+        int numOfPlants = 0;
+        int totalPlants = 0;
+        for (int c = 0; c < grid.length; c++) {
+            for (int d = 0; d < grid[0].length; d++) {
+                numOfPlants += grid[c][d].numberOfPlants;
+                totalPlants = totalPlants + 1;
+            }
+        }
+        System.out.println("the average number of plants is " + numOfPlants / totalPlants);
 
     }
 
     public void numberOfTomatoPlots() {
         // how many plots have carrots on them?
+
 
     }
 
